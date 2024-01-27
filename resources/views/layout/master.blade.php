@@ -47,9 +47,9 @@
 {{-- go to top --}}
 <a href="#" id="scrollToTop" class="opacity-0 transition-all ease-linear rounded-full text-white bg-[#DF4838] py-[10px] px-[15px] fixed bottom-5 left-5 z-50 border-2 border-[#DF4838] hover:bg-transparent hover:!text-[#DF4838]" ><i class="fa fa-angle-double-up text-xl " aria-hidden="true"></i></a>
 {{--end of go to top --}}
-    @include('include.navbar')
+@include('include.navbar')
+@include('include.footer')
     @yield('content')
-    {{-- @include('include.footer') --}}
 </body>
 <script src="{{asset('js/script.js')}}"></script>
 @yield('js')
