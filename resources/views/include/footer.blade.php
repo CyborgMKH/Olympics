@@ -1,15 +1,26 @@
-<footer class="footer  xl:px-20 lg:px-5 md:px-20 px-5 py-20 text-white font-[300]">
-    <div class="sm:grid lg:grid-cols-4 sm:grid-cols-2 gap-4">
-        <div class="">
-            <div class=" mx-auto mb-5">
-                <img class="w-full rounded-xl" src="{{asset('images/logo4.png')}}" alt="">
-            </div>
-            <p class="text-justify ">Being a "leading" IT company suggests that it is at the forefront of
-                the industry, setting trends, and often acting as a role model for other companies in
-                terms of performance, growth, and impact. Its consistent dedication to 
-                technological advancement and client satisfaction solidifies its position as the 
-                leading IT powerhouse in the country.</p>
-           
+
+
+<footer class="bg-white shadow dark:bg-gray-900 fixed bottom-0 w-full left-0 ">
+    <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+                <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+            </a>
+            <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+                <li>
+                    <a href="#" class="hover:underline me-4 md:me-6">About</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline">Contact</a>
+                </li>
+            </ul>
         </div>
         <div class=" flex mt-[70px]">
             <div class="mx-auto ">
