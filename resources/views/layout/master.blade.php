@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {{-- fav icon --}}
-    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('images/favnth.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('images/favicon-32x32.png')}}">
       
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -40,7 +40,7 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     {{-- end of custom-css --}}
     @yield('css')
-    <title>{{config('app.name')}}</title>
+    <title>{{config('app.name')}} - Paris 2024</title>
 </head>
 <body>
     
