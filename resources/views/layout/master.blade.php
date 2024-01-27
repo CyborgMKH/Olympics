@@ -14,6 +14,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Poppins&family=Roboto&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     {{--end of goole fonts --}}
 
 
@@ -48,8 +51,8 @@
 <a href="#" id="scrollToTop" class="opacity-0 transition-all ease-linear rounded-full text-white bg-[#DF4838] py-[10px] px-[15px] fixed bottom-5 left-5 z-50 border-2 border-[#DF4838] hover:bg-transparent hover:!text-[#DF4838]" ><i class="fa fa-angle-double-up text-xl " aria-hidden="true"></i></a>
 {{--end of go to top --}}
 @include('include.navbar')
+@yield('content')
 @include('include.footer')
-    @yield('content')
 </body>
 <script src="{{asset('js/script.js')}}"></script>
 @yield('js')

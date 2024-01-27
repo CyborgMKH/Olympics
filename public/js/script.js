@@ -9,11 +9,13 @@ $(document).ready(function(){
         if (scrollPos > 50 || scrollPos === $(document).height() - $(window).height())
         {
             scrollTop.css('opacity','1');
-            navbar.addClass("nav_scrolled");
+            navbar.addClass("shadow-lg");
+            navbar.removeClass("py-2");
           }
           else
           {
-            navbar.removeClass("nav_scrolled");
+            navbar.addClass("py-2");
+            navbar.removeClass("shadow-lg");
             scrollTop.css('opacity','0');
           }
           
