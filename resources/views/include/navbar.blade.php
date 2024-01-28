@@ -7,11 +7,11 @@
         <div id="mobnav" class="text-[15px] lg:flex md:px-20 px-5 lg:px-0 md:text-lg mx-0 mobnav  pt-24 lg:pt-0 lg:w-full w-[80%]">
             <div class="lg:m-auto">
                 <ul class="flex   nav-container">
-                    <li class="mx-4 my-2 lg:my-auto "><a href=""  class="{{ request()->is('/')?'active':''}} nav-link">Home</a></li>
+                    <li class="mx-4 my-2 lg:my-auto "><a href="{{route('home')}}"  class="{{ request()->is('/')?'active':''}} nav-link">Home</a></li>
                     <li class="mx-4 my-2 lg:my-auto "><a href=""  class=" nav-link">Olympic Games</a></li>
                     <li class="mx-4 my-2 lg:my-auto "><a href=""  class="nav-link">Athletes</a></li>
                     <li class="mx-4 my-2 lg:my-auto "><a href=""  class="nav-link">Sports</a></li>
-                    <li class="mx-4 my-2 lg:my-auto "><a href=""  class="nav-link">News</a></li>
+                    <li class="mx-4 my-2 lg:my-auto "><a href="{{route('news')}}"  class="{{ request()->is('news*')?'active':''}} nav-link">News</a></li>
                 </ul>
             </div>
         </div>
