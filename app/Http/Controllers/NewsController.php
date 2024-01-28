@@ -16,6 +16,8 @@ class NewsController extends Controller
     public function singleNews($slug)
     {
         $news=News::where('slug',$slug)->first();
+        $news->views++;
+        $news->save();
         $recentNews=News::where('id', '!=', $news->id)
         ->orderBy('created_at', 'desc')
         ->get();
