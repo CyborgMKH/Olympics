@@ -1,11 +1,7 @@
 @extends('layout.master')
 @section('content')
 
-
-
     <section>
-        
-
         {{-- slider --}}
         <div class="relative">
             <div class="swiper mySwiper hero-swiper lg:h-[90vh] h-[50vh]">
@@ -59,13 +55,12 @@
                   
                   
                 </div>
-                <div class="absolute z-10 top-1/2 lg:right-5 right-0.5 border-2 border-white hover:bg-transparent hover:text-white text-black transit duration-300 ease-linear  bg-white rounded-full px-2 py-[3px] hero-swiper-button-next">
-                    <i class="fa-solid fa-arrow-right text-3xl"></i>
+                {{-- <div class="absolute z-10 top-1/2 lg:right-5 right-0.5 border-2 border-white hover:bg-transparent hover:text-white text-black transit duration-300 ease-linear  bg-white rounded-full px-2 py-[3px] hero-swiper-button-next"> --}}
+                    {{-- <i class="fa-solid fa-arrow-right text-3xl"></i>
                 </div>
                 <div class="absolute z-10 top-1/2 lg:left-5 left-0.5 border-2 border-white hover:bg-transparent hover:text-white text-black transit duration-300 ease-linear  bg-white rounded-full px-2 py-[3px] hero-swiper-button-prev">
                     <i class="fa-solid fa-arrow-left text-3xl"></i>
-                </div>
-                <div class="hero-swiper-button-prev"></div>
+                </div> --}}
                 <div class="swiper-pagination hero-swiper-pagination"></div>
             </div>
             <div class="absolute pointer-events-none z-10 top-0 w-full left-0 h-full flex items-center justify-center">
@@ -104,7 +99,7 @@
           <div class="flex justify-between">
             <h2 class="font-bold text-5xl text-black">#HIGHLIGHTSPARIS2024</h2>
             <a href="" class="flex gap-2 items-center ">
-              <span class="border-b border-black text-gray-600 font-semibold">See More</span>
+              <span class="border-b border-black text-black font-semibold">See More</span>
               <i class="fas fa-arrow-right"></i>
             </a>
           </div>
@@ -205,22 +200,50 @@
         {{--end of events section --}}
 
 
-         {{-- booking section --}}
+         {{-- news section --}}
          <div class="p-20">
-          <div class="grid grid-cols-2 gap-10">
-            <div>
-              <img src="{{asset('images/slider/vc4ucoz6rs96naqnk3jb.jpg')}}" class="h-full w-full object-cover object-center rounded-lg" alt="">
+          <div class="flex justify-between">
+            <h2 class="font-bold text-5xl text-black">#LATESTNEWS</h2>
+            <a href="" class="flex gap-2 items-center ">
+              <span class="border-b border-black text-black font-semibold">See More</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+          <div class="grid grid-cols-5 gap-10 mt-10">
+            <div class="col-span-3 group">
+              <div class="overflow-hidden">
+                <img class="group-hover:scale-110 transition-all duration-500" src="{{asset('images/slider/ufiinqivfn8ig30anqpe.webp')}}" alt="">
+              </div>
+              <div class="mt-10">
+                <h2 class="text-3xl hover:underline">ISSF World Cup 2024 Cairo shooting: India's 10m air pistol mixed team wins gold medal</h2>
+              </div>
             </div>
-            <div>
-              <h2 class="text-[80px] font-bold leading-[80px] uppercase -mt-4" style="font-family: 'Barlow Condensed">Paris 2024 <br> Games Official Ticketing</h2>
-              <p class="text-[20px] leading-[32px] mt-5">Secure your Olympic and Paralympic tickets instantly! Click "Buy Now," pay through PayPal, and skip the hassle. The official Paris 2024 Games ticketing platform provides quick and easy access to all the information you need. Don't miss out—reserve your spot now!</p>
-              <div class="mt-5">
-                <a href="" class="px-6 py-3 rounded-xl bg-black hover:bg-gray-900 text-white group">Buy now <i class="fas fa-arrow-right -rotate-45 ml-3 group-hover:rotate-0 transition-all duration-500"></i></a>
+            <div class="col-span-2 group">
+              <div class="overflow-hidden">
+                <img class="w-full group-hover:scale-110 transition-all duration-500" src="{{asset('images/slider/ufiinqivfn8ig30anqpe.webp')}}" alt="">
+              </div>
+              <div class="mt-10">
+                <h2 class="text-3xl hover:underline">ISSF World Cup 2024 Cairo shooting: India's 10m air pistol mixed team wins gold medal</h2>
               </div>
             </div>
           </div>
+          <div class="grid grid-cols-3 mt-20 gap-10">
+
+            @for ($i=0;$i<3;$i++)
+              
+            <div class="group">
+              <div class="overflow-hidden">
+                <img class="group-hover:scale-110 transition-all duration-700 w-full" src="{{asset('images/slider/ufiinqivfn8ig30anqpe.webp')}}" alt="">
+              </div>
+              <div class="mt-10">
+                <h2 class="text-2xl hover:underline cursor-pointer">ISSF World Cup 2024 Cairo shooting: India's 10m air pistol mixed team wins gold medal</h2>
+              </div>
+            </div>
+            @endfor
+
+          </div>
         </div>
-        {{--end of booking section --}}
+        {{--end of news section --}}
 
 
 
@@ -380,6 +403,7 @@
         delay: 5000,
         disableOnInteraction: false,
       },
+      loop:true,
         navigation: {
             nextEl: ".hero-swiper-button-next",
             prevEl: ".hero-swiper-button-prev",
