@@ -9,7 +9,7 @@
                 <ul class="flex   nav-container">
                     <li class="mx-4 my-2 lg:my-auto "><a href="{{route('home')}}"  class="{{ request()->is('/')?'active':''}} nav-link">Home</a></li>
                     <li class="mx-4 my-2 lg:my-auto "><a href=""  class=" nav-link">Olympic Games</a></li>
-                    <li class="mx-4 my-2 lg:my-auto "><a href=""  class="nav-link">Athletes</a></li>
+                    <li class="mx-4 my-2 lg:my-auto "><a href="{{route('athlete')}}"  class=" {{ request()->is('athletes*')?'active':''}} nav-link">Athletes</a></li>
                     <li class="mx-4 my-2 lg:my-auto "><a href=""  class="nav-link">Sports</a></li>
                     <li class="mx-4 my-2 lg:my-auto "><a href="{{route('news')}}"  class="{{ request()->is('news*')?'active':''}} nav-link">News</a></li>
                 </ul>

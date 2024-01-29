@@ -49,22 +49,22 @@
                 @endif
             @else
                 <div class="grid grid-cols-5 gap-10 mt-10">
-                <div class="col-span-3 group">
-                    <div class="overflow-hidden">
-                    <img class="group-hover:scale-110 transition-all duration-500" src="{{asset('images/slider/ufiinqivfn8ig30anqpe.webp')}}" alt="">
+                    <div class="col-span-3 group">
+                        <div class="overflow-hidden">
+                        <img class="group-hover:scale-110 transition-all duration-500" src="{{asset('images/slider/ufiinqivfn8ig30anqpe.webp')}}" alt="">
+                        </div>
+                        <div class="mt-10">
+                        <h2 class="text-3xl hover:underline">ISSF World Cup 2024 Cairo shooting: India's 10m air pistol mixed team wins gold medal</h2>
+                        </div>
                     </div>
-                    <div class="mt-10">
-                    <h2 class="text-3xl hover:underline">ISSF World Cup 2024 Cairo shooting: India's 10m air pistol mixed team wins gold medal</h2>
+                    <div class="col-span-2 group">
+                        <div class="overflow-hidden">
+                        <img class="w-full group-hover:scale-110 transition-all duration-500" src="{{asset('images/slider/ufiinqivfn8ig30anqpe.webp')}}" alt="">
+                        </div>
+                        <div class="mt-10">
+                        <h2 class="text-3xl hover:underline">ISSF World Cup 2024 Cairo shooting: India's 10m air pistol mixed team wins gold medal</h2>
+                        </div>
                     </div>
-                </div>
-                <div class="col-span-2 group">
-                    <div class="overflow-hidden">
-                    <img class="w-full group-hover:scale-110 transition-all duration-500" src="{{asset('images/slider/ufiinqivfn8ig30anqpe.webp')}}" alt="">
-                    </div>
-                    <div class="mt-10">
-                    <h2 class="text-3xl hover:underline">ISSF World Cup 2024 Cairo shooting: India's 10m air pistol mixed team wins gold medal</h2>
-                    </div>
-                </div>
                 </div>
                 <div class="grid grid-cols-3 mt-20 gap-10">
     

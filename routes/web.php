@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AthleteController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use Illuminate\Support\Facades\Route;
@@ -18,4 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[HomeController::class,'index'])->name('home');
 Route::get('/news',[NewsController::class,'index'])->name('news');
 Route::get('/news/{slug}',[NewsController::class,'singleNews'])->name('news.single');
+Route::get('/athletes',[AthleteController::class,'index'])->name('athlete');
+Route::get('/athletes/{slug}',[AthleteController::class,'singleAthlete'])->name('athlete.single');
+
 

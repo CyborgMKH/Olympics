@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $news=News::orderBy('created_at','DESC')->get();
+        $news=News::orderBy('created_at','DESC')->limit(5)->get();
         return view('home',compact('news'));
     }
 }
