@@ -7,11 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\HasMedia;
 
-class Event extends Model implements HasMedia
+class Highlight extends Model implements HasMedia
 {
     use HasFactory,InteractsWithMedia;
     protected $fillable=[
         'name',
-        'schedule',
+        'slug',
+        'description',
+        'game_id',
     ];
+
+    public function game()
+    {
+        return $this->belongsTo(Game::class,'game_id');
+    }
 }

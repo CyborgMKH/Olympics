@@ -1,8 +1,11 @@
 <?php
 
 use App\Http\Controllers\AthleteController;
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\HighlightController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\SportController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,5 +24,9 @@ Route::get('/news',[NewsController::class,'index'])->name('news');
 Route::get('/news/{slug}',[NewsController::class,'singleNews'])->name('news.single');
 Route::get('/athletes',[AthleteController::class,'index'])->name('athlete');
 Route::get('/athletes/{slug}',[AthleteController::class,'singleAthlete'])->name('athlete.single');
+Route::get('/highlights',[HighlightController::class,'index'])->name('highlight');
+Route::get('/highlights/{slug}',[HighlightController::class,'single'])->name('highlight.single');
+Route::get('/sports',[SportController::class,'index'])->name('sport');
+Route::get('/events',[EventController::class,'index'])->name('event');
 
 
