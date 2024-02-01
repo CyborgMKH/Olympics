@@ -15,8 +15,13 @@ class Game extends Model implements HasMedia
         'name',
     ];
 
-    public function game()
+    public function athlete()
     {
         return $this->belongsToMany(Athlete::class);
+    }
+    
+    public function highlight()
+    {
+        return $this->hasMany(Highlight::class,'game_id','id');
     }
 }

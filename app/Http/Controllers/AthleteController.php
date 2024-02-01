@@ -17,7 +17,7 @@ class AthleteController extends Controller
     public function singleAthlete($slug)
     {
         $athlete=Athlete::where('slug',$slug)->first();
-        $news=News::orderBy('created_at','DESC')->limit(4)->get();
+        $news=News::inRandomOrder()->limit(4)->get();
         return view('singleAthlete',compact('athlete','news'));
     }
 }

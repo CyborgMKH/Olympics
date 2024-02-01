@@ -30,3 +30,7 @@
     /* width: 100%; */
     transform: scaleX(1);
 }
+
+.ytp-youtube-button{
+    display: none !important;
+}

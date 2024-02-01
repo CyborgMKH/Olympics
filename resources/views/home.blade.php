@@ -98,12 +98,36 @@
         <div class="p-20">
           <div class="flex justify-between">
             <h2 class="font-bold text-5xl text-black">#HIGHLIGHTSPARIS2024</h2>
-            <a href="" class="flex gap-2 items-center ">
+            <a href="{{route('highlight')}}" class="flex gap-2 items-center ">
               <span class="border-b border-black text-black font-semibold">See More</span>
               <i class="fas fa-arrow-right"></i>
             </a>
           </div>
             <div class="grid grid-cols-4 gap-5 mt-20">
+              @if (count($highlights)>0)
+                @foreach ($highlights as $highlight)
+                <div class="flex justify-center hover:-translate-y-2 transition-all duration-500">
+                    <div class="rounded-lg shadow-lg bg-white max-w-sm">
+                        <a>
+                            <video width="320" height="240" controls class="w-full rounded-t-lg">
+                                <source src="{{$highlight->getFirstMediaUrl('highlight')}}" type="video/mp4">
+                                <source src="movie.ogg" type="video/ogg">
+                                Your browser does not support the video tag.
+                            </video>
+                        </a>
+                        <div class="p-6">
+                          <a href="{{route('highlight.single',$highlight->slug)}}">
+                            <h5 class="text-gray-900 text-xl font-medium mb-2">{{$highlight->name}}</h5>
+                          </a>
+                            <div class="text-gray-700 text-base mb-4">
+                                {!!$highlight->description!!}
+                            </div>
+                    
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+              @else
                 @for ($i=0;$i<4;$i++)
                     <div class="flex justify-center hover:-translate-y-2 transition-all duration-500">
                         <div class="rounded-lg shadow-lg bg-white max-w-sm">
@@ -124,6 +148,7 @@
                         </div>
                     </div>
                 @endfor
+              @endif
             </div>
         </div>
       
@@ -173,12 +198,29 @@
           </div>
           <div class="flex justify-between my-20">
             <h2 class="font-bold text-3xl">Featured Events</h2>
-            <a href="" class="flex gap-2 items-center ">
+            <a href="{{route('event')}}" class="flex gap-2 items-center ">
               <span class="hover:border-b border-white font-semibold">View All</span>
               <i class="fas fa-arrow-right"></i>
             </a>
           </div>
           <div class=" grid grid-cols-3 gap-10">
+            @if(count($events)>0)
+            @foreach ($events as $event)
+            <div class="bg-[#171717] rounded-xl group">
+              <div class="py-10 px-5">
+                <h2 class="text-[40px] font-semibold">{{$event->name}}</h2>
+                <a href="" class="text-[25px] font-semibold">
+                  {{$event->schedule}} | Winter Youth Olympic Games
+                </a>
+              </div>
+              <div class="overflow-hidden">
+                <a href="">
+                  <img class="group-hover:scale-110 transition-all duration-700" src="{{$event->getFirstMediaUrl('event')}}" alt="">
+                </a>
+              </div>
+            </div>
+            @endforeach
+            @else
             @for ($i=1;$i<=3;$i++)
             <div class="bg-[#171717] rounded-xl group">
               <div class="py-10 px-5">
@@ -193,7 +235,9 @@
                 </a>
               </div>
             </div>
-            @endfor
+            
+              @endfor
+            @endif
 
           </div>
         </div>
@@ -301,137 +345,43 @@
           </div>
 
           <div class="grid grid-cols-4 gap-10 mt-10">
-           {{-- component --}}
-            <div class="bg-white py-5 px-5">
-              <div class="flex gap-5 font-bold">
-                <div>
-                  <span class="px-2.5 py-1 bg-[#FCC861] rounded-full mr-1">2</span> G
+            @if (count($athletes)>0)
+              @foreach ($athletes as $athlete)
+              <a href="{{route('athlete.single',$athlete->slug)}}">
+                {{-- component --}}
+                <div class="bg-white py-5 px-5">
+                  <div class="flex gap-5 font-bold {{($athlete->medal_gold==0 && $athlete->medal_silver==0)?'opacity-0 invisible':''}}">
+                    <div>
+                      <span class="px-2.5 py-1 bg-[#FCC861] rounded-full mr-1">{{$athlete->medal_gold}}</span> G
+                    </div>
+                    <div>
+                      <span class="px-2.5 py-1 bg-[#E5E5E5] rounded-full mr-1">{{$athlete->medal_silver}}</span> S
+                    </div>
+                  </div>
+                  <div class="w-[200px] h-[200px] mx-auto rounded-full overflow-hidden my-14">
+                    <img class="w-full h-full object-cover object-center  hover:scale-110 duration-500" src="{{$athlete->getFirstMediaUrl('athlete')}}" alt="">
+                  </div>
+                  <div>
+                    <h2 class="text-2xl" style="font-family: 'Barlow Condensed">{{$athlete->name}}</h2>
+                  </div>
+                  <hr class="my-5">
+                    <h2 class="text-xl" style="font-family: 'Barlow Condensed">@foreach ($athlete->games as $key=>$game)
+                      {{$key>0?', ':''}}{{$game->name}}
+                  @endforeach</h2>
+                  <div class="mt-4 flex gap-3">
+                    <div class="w-[30px] h-[25px] border-[0.5px] border-gray-300">
+                      <img class="w-full h-full object-cover object-center" src="{{$athlete->country->getFirstMediaUrl('country')}}" alt="">
+                    </div>
+                    <h2 class="text-gray-600">{{$athlete->country->name}}</h2>
+                  </div>
                 </div>
-                <div>
-                  <span class="px-2.5 py-1 bg-[#E5E5E5] rounded-full mr-1">1</span> S
-                </div>
-              </div>
-              <div class="w-[200px] h-[200px] mx-auto rounded-full overflow-hidden my-14">
-                <img class="w-full h-full object-cover object-center  hover:scale-110 duration-500" src="https://img.olympics.com/images/image/private/t_1-1_300/primary/xcgpcs9uupretauljihi" alt="">
-              </div>
-              <div>
-                <h2 class="text-2xl" style="font-family: 'Barlow Condensed">Kaoru MITOMA</h2>
-              </div>
-              <hr class="my-5">
-              <h2 class="text-xl" style="font-family: 'Barlow Condensed">Football</h2>
-              <div class="mt-4 flex gap-3">
-                <div class="w-[30px] h-[25px] border-[0.5px] border-gray-300">
-                  <img class="w-full h-full object-cover object-center" src="https://olympics.com/images/static/country/flag/4x3/jp.svg" alt="">
-                </div>
-                <h2 class="text-gray-600">Japan</h2>
-              </div>
-            </div>
-           {{--end of component --}}
-           {{-- component --}}
-            <div class="bg-white py-5 px-5">
-              <div class="flex gap-5 font-bold">
-                <div>
-                  <span class="px-2.5 py-1 bg-[#FCC861] rounded-full mr-1">2</span> G
-                </div>
-                <div>
-                  <span class="px-2.5 py-1 bg-[#E5E5E5] rounded-full mr-1">1</span> S
-                </div>
-              </div>
-              <div class="w-[200px] h-[200px] mx-auto rounded-full overflow-hidden my-14">
-                <img class="w-full h-full object-cover object-center  hover:scale-110 duration-500" src="https://img.olympics.com/images/image/private/t_1-1_300/primary/xcgpcs9uupretauljihi" alt="">
-              </div>
-              <div>
-                <h2 class="text-2xl" style="font-family: 'Barlow Condensed">Kaoru MITOMA</h2>
-              </div>
-              <hr class="my-5">
-              <h2 class="text-xl" style="font-family: 'Barlow Condensed">Football</h2>
-              <div class="mt-4 flex gap-3">
-                <div class="w-[30px] h-[25px] border-[0.5px] border-gray-300">
-                  <img class="w-full h-full object-cover object-center" src="https://olympics.com/images/static/country/flag/4x3/jp.svg" alt="">
-                </div>
-                <h2 class="text-gray-600">Japan</h2>
-              </div>
-            </div>
-           {{--end of component --}}
-           {{-- component --}}
-            <div class="bg-white py-5 px-5">
-              <div class="flex gap-5 font-bold">
-                <div>
-                  <span class="px-2.5 py-1 bg-[#FCC861] rounded-full mr-1">2</span> G
-                </div>
-                <div>
-                  <span class="px-2.5 py-1 bg-[#E5E5E5] rounded-full mr-1">1</span> S
-                </div>
-              </div>
-              <div class="w-[200px] h-[200px] mx-auto rounded-full overflow-hidden my-14">
-                <img class="w-full h-full object-cover object-center  hover:scale-110 duration-500" src="https://img.olympics.com/images/image/private/t_1-1_300/primary/xcgpcs9uupretauljihi" alt="">
-              </div>
-              <div>
-                <h2 class="text-2xl" style="font-family: 'Barlow Condensed">Kaoru MITOMA</h2>
-              </div>
-              <hr class="my-5">
-              <h2 class="text-xl" style="font-family: 'Barlow Condensed">Football</h2>
-              <div class="mt-4 flex gap-3">
-                <div class="w-[30px] h-[25px] border-[0.5px] border-gray-300">
-                  <img class="w-full h-full object-cover object-center" src="https://olympics.com/images/static/country/flag/4x3/jp.svg" alt="">
-                </div>
-                <h2 class="text-gray-600">Japan</h2>
-              </div>
-            </div>
-           {{--end of component --}}
-           {{-- component --}}
-            <div class="bg-white py-5 px-5">
-              <div class="flex gap-5 font-bold opacity-0 invisible">
-                <div>
-                  <span class="px-2.5 py-1 bg-[#FCC861] rounded-full mr-1">2</span> G
-                </div>
-                <div>
-                  <span class="px-2.5 py-1 bg-[#E5E5E5] rounded-full mr-1">1</span> S
-                </div>
-              </div>
-              <div class="w-[200px] h-[200px] mx-auto rounded-full overflow-hidden my-14">
-                <img class="w-full h-full object-cover object-center  hover:scale-110 duration-500" src="https://img.olympics.com/images/image/private/t_1-1_300/primary/xcgpcs9uupretauljihi" alt="">
-              </div>
-              <div>
-                <h2 class="text-2xl" style="font-family: 'Barlow Condensed">Kaoru MITOMA</h2>
-              </div>
-              <hr class="my-5">
-              <h2 class="text-xl" style="font-family: 'Barlow Condensed">Football</h2>
-              <div class="mt-4 flex gap-3">
-                <div class="w-[30px] h-[25px] border-[0.5px] border-gray-300">
-                  <img class="w-full h-full object-cover object-center" src="https://olympics.com/images/static/country/flag/4x3/jp.svg" alt="">
-                </div>
-                <h2 class="text-gray-600">Japan</h2>
-              </div>
-            </div>
-           {{--end of component --}}
-           {{-- component --}}
-            <div class="bg-white py-5 px-5">
-              <div class="flex gap-5 font-bold">
-                <div>
-                  <span class="px-2.5 py-1 bg-[#FCC861] rounded-full mr-1">2</span> G
-                </div>
-                <div>
-                  <span class="px-2.5 py-1 bg-[#E5E5E5] rounded-full mr-1">1</span> S
-                </div>
-              </div>
-              <div class="w-[200px] h-[200px] mx-auto rounded-full overflow-hidden my-14">
-                <img class="w-full h-full object-cover object-center  hover:scale-110 duration-500" src="https://img.olympics.com/images/image/private/t_1-1_300/primary/xcgpcs9uupretauljihi" alt="">
-              </div>
-              <div>
-                <h2 class="text-2xl" style="font-family: 'Barlow Condensed">Kaoru MITOMA</h2>
-              </div>
-              <hr class="my-5">
-              <h2 class="text-xl" style="font-family: 'Barlow Condensed">Football</h2>
-              <div class="mt-4 flex gap-3">
-                <div class="w-[30px] h-[25px] border-[0.5px] border-gray-300">
-                  <img class="w-full h-full object-cover object-center" src="https://olympics.com/images/static/country/flag/4x3/jp.svg" alt="">
-                </div>
-                <h2 class="text-gray-600">Japan</h2>
-              </div>
-            </div>
-           {{--end of component --}}
-
+                {{--end of component --}}
+              </a>
+              @endforeach
+            @else
+              @for ($i=0;$i<4;$i++)
+              @endfor
+            @endif
           </div>
         </div>
         {{--end of athlets section --}}

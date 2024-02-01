@@ -72,11 +72,7 @@
 
         <div class="py-20">
             <div class="flex justify-between">
-                <h2 class="font-bold text-5xl text-black">#LATESTNEWS</h2>
-                <a href="{{route('news')}}" class="flex gap-2 items-center ">
-                  <span class="border-b border-black text-black font-semibold">See More</span>
-                  <i class="fas fa-arrow-right"></i>
-                </a>
+                <h2 class="font-bold text-5xl text-black uppercase">you may like</h2>
               </div>
               @if (count($news)>0)
               @php
