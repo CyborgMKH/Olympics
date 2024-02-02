@@ -179,7 +179,7 @@
               <h2 class="text-[80px] font-bold leading-[80px] uppercase -mt-4" style="font-family: 'Barlow Condensed">Paris 2024 <br> Games Official Ticketing</h2>
               <p class="text-[20px] leading-[32px] mt-5">Secure your Olympic and Paralympic tickets instantly! Click "Buy Now," pay through PayPal, and skip the hassle. The official Paris 2024 Games ticketing platform provides quick and easy access to all the information you need. Don't miss out—reserve your spot now!</p>
               <div class="mt-5">
-                <a href="" class="px-6 py-3 rounded-xl bg-black hover:bg-gray-900 text-white group">Buy now <i class="fas fa-arrow-right -rotate-45 ml-3 group-hover:rotate-0 transition-all duration-500"></i></a>
+                <a href="{{route('createTransaction')}}" class="px-6 py-3 rounded-xl bg-black hover:bg-gray-900 text-white group">Buy now <i class="fas fa-arrow-right -rotate-45 ml-3 group-hover:rotate-0 transition-all duration-500"></i></a>
               </div>
             </div>
           </div>

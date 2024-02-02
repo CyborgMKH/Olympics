@@ -20,9 +20,9 @@
                         <h2 class="text-base">{{$news->views}} Views</h2>
                     </a>
                     <a class="items-center cursor-pointer justify-center flex flex-col">
-                        <i onclick="blogLike(1)" id="blogLikeIcon" class="fa-regular fa-heart"></i>
-                        <i onclick="blogunLike(1)" id="blogUnlikeIcon" class="hidden fa-solid fa-heart"></i>
-                        <h2 class="text-base"><span id="bloglikes">{{$news->likes}}</span> Likes</h2>
+                        <i onclick="newsLike({{$news->id}})" id="newsLikeIcon" class="fa-regular fa-heart"></i>
+                        <i onclick="newsunLike({{$news->id}})" id="newsUnlikeIcon" class="hidden fa-solid fa-heart"></i>
+                        <h2 class="text-base"><span id="newslikes">{{$news->likes}}</span> Likes</h2>
                     </a>
                 </div>
                 <h2 class="text-base">Share</h2>
@@ -39,14 +39,7 @@
         </div>
         <div class="lg:col-span-2 lg:order-2 order-1">
             <h2 class="text-2xl text-orange-500 font-semibold">{{$news->title}}</h2>
-            {{-- <div class="mt-2 flex items-center">
-                <div class=" h-[35px] w-[35px] text-xl font-bold text-white rounded-full flex bg-black items-center justify-center">
-                    C
-                </div>
-                <div class="ml-5">
-                    <span class="leading-[1.1rem] mt-2 text-md text-gray-600 font-[500]">-- Cit-Ecommerce -- <span class="ml-2">{{DateTimeFormatHelper::DateTimeFormatHelper($blog->created_at)}}</span></span>
-                </div>
-            </div> --}}
+         
             <div class="text-justify my-5">{!!$news->description!!}</div>
         </div>
         <div class="order-3">
@@ -96,6 +89,68 @@
                 }
             });
         });
+
+
+
+        const csrfToken = $('meta[name="csrf-token"]').attr('content');
+        function newsLike(id)
+        {
+            console.log(id);
+            if(id && csrfToken)
+            {
+                $.ajax({
+                    type: "POST",
+                    headers: {
+                        'X-CSRF-TOKEN': csrfToken
+                    },
+                    url : "/news/like/"+id,
+                    success: function (response){
+                        console.log(response);
+                        $('#newslikes').html(response.likes);
+                        $('#newsLikeIcon').addClass('hidden');
+                        $('#newsUnlikeIcon').removeClass('hidden');
+                        Swal.fire({
+                            icon: response.status,
+                            title: response.message,
+                            showConfirmButton: false,
+                            timer: 3000,
+                            toast:true,
+                            position:'top-end',
+                            timerProgressBar: true,
+                            showCloseButton:true
+                            });
+                    }
+                });
+            }
+        }
+        function newsunLike(id)
+        {
+            if(id && csrfToken)
+            {
+                $.ajax({
+                    type: "POST",
+                    headers: {
+                        'X-CSRF-TOKEN': csrfToken
+                    },
+                    url : "/news/unlike/"+id,
+                    success: function (response){
+                        $('#newslikes').html(response.likes);
+                        $('#newsUnlikeIcon').addClass('hidden');
+                        $('#newsLikeIcon').removeClass('hidden');
+                        Swal.fire({
+                            icon: response.status,
+                            title: response.message,
+                            showConfirmButton: false,
+                            timer: 3000,
+                            toast:true,
+                            position:'top-end',
+                            timerProgressBar: true,
+                            showCloseButton:true
+                            });
+                    }
+                });
+            }
+        }
 
     </script>
 @endsection

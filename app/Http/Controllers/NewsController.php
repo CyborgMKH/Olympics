@@ -23,4 +23,30 @@ class NewsController extends Controller
         ->get();
         return view('singleNews',compact('news','recentNews'));
     }
+    public function newsLike($id)
+    {
+        $news=News::find($id);
+        $news->likes++;
+        $news->save();
+        $response=[
+            'status'=>'success',
+            'likes'=>$news->likes,
+            'message'=>'Liked Successfully'
+        ];
+        return $response;
+    }
+
+    public function newsUnlike($id)
+    {
+        $news=News::find($id);
+        $news->likes--;
+        $news->save();
+        $response=[
+            'status'=>'success',
+            'likes'=>$news->likes,
+            'message'=>'Unliked Successfully'
+        ];
+        return $response;
+    }
+    
 }
