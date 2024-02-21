@@ -10,6 +10,7 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\SportController;
 use App\Http\Controllers\TicketController;
 use App\Http\Controllers\PayPalController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/',[HomeController::class,'index'])->name('home');
+Route::get('/search',[SearchController::class,'index'])->name('search');
 Route::get('/news',[NewsController::class,'index'])->name('news');
 Route::get('/news/{slug}',[NewsController::class,'singleNews'])->name('news.single');
 Route::get('/athletes',[AthleteController::class,'index'])->name('athlete');

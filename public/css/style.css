@@ -34,3 +34,7 @@
 .ytp-youtube-button{
     display: none !important;
 }
+
+#mobnav.active{
+    left: 0 !important;
+}
