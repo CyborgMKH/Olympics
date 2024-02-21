@@ -30,7 +30,7 @@ class AthleteResource extends Resource
 {
     protected static ?string $model = Athlete::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-user-group';
 
     public static function form(Form $form): Form
     {
@@ -82,7 +82,7 @@ class AthleteResource extends Resource
                             ->relationship('games', 'name')
                             ->multiple()
                             ->preload(),
-                ]),
+                    ]),
             ]);
     }
 
@@ -94,7 +94,7 @@ class AthleteResource extends Resource
                 SpatieMediaLibraryImageColumn::make('image')->collection('athlete')->circular(),
                 TextColumn::make('dob'),
                 TextColumn::make('country.name'),
-                
+
             ])
             ->filters([
                 //
