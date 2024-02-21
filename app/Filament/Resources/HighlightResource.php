@@ -30,7 +30,7 @@ class HighlightResource extends Resource
 {
     protected static ?string $model = Highlight::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-video-camera';
 
     public static function form(Form $form): Form
     {
