@@ -2,8 +2,8 @@
 
 <footer class="shadow bg-gray-900">
     <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
-        <div class="sm:flex sm:items-center sm:justify-between">
-            <div class="mobile:w-[250px] w-[400px]">
+        <div class="flex flex-wrap gap-10 justify-between">
+            <div class="w-[50%]">
                 <a href="{{route('home')}}" ><img class="w-full" src="{{asset('images/logo3.png')}}" alt=""></a>
             </div>
             <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0">
