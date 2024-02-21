@@ -65,7 +65,7 @@
             </div>
             <div class="absolute pointer-events-none z-10 top-0 w-full left-0 h-full flex items-center justify-center">
               <div class="text-white text-center flex items-center justify-center gap-2">
-                <h2 class="font-bold text-2xl">Olympic Games Paris 2024</h2>
+                <h2 class="font-bold text-2xl">Olympic Games Payris 2024</h2>
                 <h4 class="font-bold">- 26 July - 11 August, 2024</h4>
                 <div class="ow-paris__countdown-days edge">
                     <div class="ow-paris__days">
@@ -97,7 +97,7 @@
         {{-- video section --}}
         <div class="p-20">
           <div class="flex justify-between">
-            <h2 class="font-bold text-5xl text-black">#HIGHLIGHTSPARIS2024</h2>
+            <h2 class="font-bold text-5xl text-black">#HIGHLIGHTSPAYRIS2024</h2>
             <a href="{{route('highlight')}}" class="flex gap-2 items-center ">
               <span class="border-b border-black text-black font-semibold">See More</span>
               <i class="fas fa-arrow-right"></i>
@@ -117,9 +117,9 @@
                         </a>
                         <div class="p-6">
                           <a href="{{route('highlight.single',$highlight->slug)}}">
-                            <h5 class="text-gray-900 text-xl font-medium mb-2">{{$highlight->name}}</h5>
+                            <h5 class="text-gray-900 text-xl font-medium mb-2 line-clamp-1">{{$highlight->name}}</h5>
                           </a>
-                            <div class="text-gray-700 text-base mb-4">
+                            <div class="text-gray-700 text-base mb-4 line-clamp-4 text-justify">
                                 {!!$highlight->description!!}
                             </div>
                     
@@ -161,7 +161,7 @@
               <h2 class="text-[120px] font-bold leading-[104px]" style="font-family: 'Barlow Condensed">BE PART OF <br> THE PARIS <br> 2024 GAMES</h2>
             </div>
             <div class="pt-5">
-              <p class="text-[20px] leading-[32px]">Official Olympic and Paralympic Ticketing: the gateway to make your Paris 2024 visit unforgettable. Whether you simply want tickets to watch your favourite athletes compete at the Games, there is now a new, simpler way to attend and share the excitement of the Games: through the Paris 2024 dedicated platforms. The Official Ticketing Provider ensures a seamless experience, offering a range of options to suit your preferences. Experience the thrill of the Games with easy access to tickets and an opportunity to witness world-class sporting events. Don't miss the chance to be a part of this global celebration in Paris 2024.</p>
+              <p class="text-[20px] leading-[32px]">Official Olympic and Paralympic Ticketing: the gateway to make your Payris 2024 visit unforgettable. Whether you simply want tickets to watch your favourite athletes compete at the Games, there is now a new, simpler way to attend and share the excitement of the Games: through the Paris 2024 dedicated platforms. The Official Ticketing Provider ensures a seamless experience, offering a range of options to suit your preferences. Experience the thrill of the Games with easy access to tickets and an opportunity to witness world-class sporting events. Don't miss the chance to be a part of this global celebration in Paris 2024.</p>
             </div>
           </div>
         </div>  
@@ -190,10 +190,10 @@
          <div class="p-20 bg-black text-white">
           <div class="grid grid-cols-2 gap-10">
             <div class="">
-              <h2 class="text-[120px] font-bold leading-[104px]" style="font-family: 'Barlow Condensed">OLYMPIC CHANNEL</h2>
+              <h2 class="text-[120px] font-bold leading-[104px]" style="font-family: 'Barlow Condensed">OLYMPIC EVENTS</h2>
             </div>
             <div class="pt-5">
-              <p class="text-[20px] leading-[32px]">Watch live action from your favourite sports, discover award-winning Original Films and Series and explore our 24/7 thematic linear channels.</p>
+              <p class="text-[20px] leading-[32px]">The Olympic Games showcase a myriad of thrilling events, ranging from track and field athletics to swimming, gymnastics to judo, and much more. Stay tuned to witness world-class athletes compete in a spectacle of human achievement. Check the schedule for your favorite events and immerse yourself in the spirit of global sportsmanship.</p>
             </div>
           </div>
           <div class="flex justify-between my-20">
@@ -206,7 +206,7 @@
           <div class=" grid grid-cols-3 gap-10">
             @if(count($events)>0)
             @foreach ($events as $event)
-            <div class="bg-[#171717] rounded-xl group">
+            <div class="bg-[#171717] rounded-xl group overflow-hidden">
               <div class="py-10 px-5">
                 <h2 class="text-[40px] font-semibold">{{$event->name}}</h2>
                 <a href="" class="text-[25px] font-semibold">
@@ -215,7 +215,7 @@
               </div>
               <div class="overflow-hidden">
                 <a href="">
-                  <img class="group-hover:scale-110 transition-all duration-700" src="{{$event->getFirstMediaUrl('event')}}" alt="">
+                  <img class="group-hover:scale-110 transition-all duration-700 w-full h-full object-cover object-center" src="{{$event->getFirstMediaUrl('event')}}" alt="">
                 </a>
               </div>
             </div>
@@ -231,7 +231,7 @@
               </div>
               <div class="overflow-hidden">
                 <a href="">
-                  <img class="group-hover:scale-110 transition-all duration-700" src="{{asset('images/slider/01-athens-olympic-stadium.webp')}}" alt="">
+                  <img class="group-hover:scale-110 transition-all duration-700 " src="{{asset('images/slider/01-athens-olympic-stadium.webp')}}" alt="">
                 </a>
               </div>
             </div>
