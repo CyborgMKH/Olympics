@@ -10,11 +10,13 @@ $(document).ready(function(){
         {
             scrollTop.css('opacity','1');
             navbar.addClass("shadow-lg");
-            navbar.removeClass("py-2");
+            navbar.removeClass("py-4");
+            navbar.addClass("py-2");
           }
           else
           {
-            navbar.addClass("py-2");
+            navbar.removeClass("py-2");
+            navbar.addClass("py-4");
             navbar.removeClass("shadow-lg");
             scrollTop.css('opacity','0');
           }
@@ -44,9 +46,9 @@ $(document).ready(function(){
 
 function menuBtn() {
   var element = $('#mobnav');
-  var mobileIcon = $('#mobile-icon');
+  var icon = $('#mobnav-icon');
   element.toggleClass("active");
-  mobileIcon.toggleClass("active");
+  icon.toggleClass('fa-xmark');
   $("body").toggleClass('overflow-hidden'); 
 } 
 
