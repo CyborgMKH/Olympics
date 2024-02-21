@@ -43,7 +43,7 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     {{-- end of custom-css --}}
     @yield('css')
-    <title>{{config('app.name')}} - Paris 2024</title>
+    <title>{{config('app.name')}} - Paryis 2024</title>
 </head>
 <body>
     
