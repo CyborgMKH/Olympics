@@ -39,9 +39,9 @@
                             </a>
                             <div class="p-6">
                             <a href="{{route('highlight.single',$highlight->slug)}}">
-                                <h5 class="text-gray-900 text-xl font-medium mb-2">{{$highlight->name}}</h5>
+                                <h5 class="text-gray-900 text-xl font-medium mb-2 line-clamp-1">{{$highlight->name}}</h5>
                             </a>
-                                <div class="text-gray-700 text-base mb-4">
+                                <div class="text-gray-700 text-base mb-4 line-clamp-4 text-justify">
                                     {!!$highlight->description!!}
                                 </div>
                         
