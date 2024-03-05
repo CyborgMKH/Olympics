@@ -54,10 +54,38 @@
 @include('include.navbar')
 @yield('content')
 @include('include.footer')
+{{-- login alert --}}
+<div id="loginModal" class="fixed top-0 left-0 right-0 bottom-0 hidden justify-center items-center z-[999]  backdrop-blur-lg ">
+    <div class="bg-gray-600 p-20 rounded-lg text-white">
+        <div class="flex justify-center">
+            <h2 class="text-cente">
+                <i class="fa-solid fa-circle-info text-6xl"></i>
+            </h2>
+        </div>
+        <h2 class="text-4xl mt-5">Please Login To Continue!</h2>
+        <div class="mt-5 flex justify-center">
+            <a href="{{route('login')}}" class="px-6 py-3 bg-green-500 text-black hover:bg-green-700 font-bold duration-500 rounded-xl">
+                Continue
+            </a>
+        </div>
+    </div>
+</div>
+{{-- end of login alert --}}
 </body>
 <script src="{{asset('js/script.js')}}"></script>
 @yield('js')
+@guest
+<script>
+    function  openLoginModal() {
+        document.getElementById('loginModal').style.display = "flex";
+    }
+    setTimeout(() => {
+        openLoginModal();
+    }, 20000);
+</script>
+@endguest
 <script>
     new WOW().init();
+
 </script>
 </html>
