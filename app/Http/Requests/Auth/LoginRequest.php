@@ -48,18 +48,18 @@ class LoginRequest extends FormRequest
                 'email' => trans('auth.failed'),
             ]);
         }
-        // Get the authenticated user
-        $user = Auth::user();
+        // // Get the authenticated user
+        // $user = Auth::user();
         
-        // Check if the user type is 'user'
-        if ($user->type !== 'user') {
-            Auth::logout(); // Logout the user
-            RateLimiter::hit($this->throttleKey()); // Increase the rate limiter count
+        // // Check if the user type is 'user'
+        // if ($user->type !== 'user') {
+        //     Auth::logout(); // Logout the user
+        //     RateLimiter::hit($this->throttleKey()); // Increase the rate limiter count
 
-            throw ValidationException::withMessages([
-                'email' => trans('auth.failed'),
-            ]);
-        }
+        //     throw ValidationException::withMessages([
+        //         'email' => trans('auth.failed'),
+        //     ]);
+        // }
 
         RateLimiter::clear($this->throttleKey());
     }
