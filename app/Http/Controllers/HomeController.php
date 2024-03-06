@@ -15,8 +15,8 @@ class HomeController extends Controller
     {
         $events=Event::orderBy('created_at','DESC')->limit(3)->get();
         $news=News::orderBy('created_at','DESC')->limit(5)->get();
-        $athletes=Athlete::all();
-        $highlights=Highlight::all();
+        $athletes=Athlete::orderBy('created_at', 'DESC')-> limit(4)->get();
+        $highlights=Highlight::orderBy('created_at','DESC')->limit(4)->get();;
         return view('home',compact('news','athletes','highlights','events'));
     }
 }
