@@ -145,7 +145,7 @@
               @endif
             </div>
         </div>
-      
+
         {{--end of video section --}}
 
         {{-- be part of paris section --}}
