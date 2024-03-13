@@ -8,12 +8,12 @@
                     <div class="shadow-2xl shadow-gray-700 rounded-xl group overflow-hidden">
                         <div class="py-10 px-5">
                         <h2 class="text-[40px] font-semibold">{{$event->name}}</h2>
-                        <a href="" class="text-[25px] font-semibold">
+                        <a class="text-[25px] font-semibold">
                             {{$event->schedule}} | Fun Olympic Payris 2024
                         </a>
                         </div>
                         <div class="overflow-hidden">
-                        <a href="">
+                        <a>
                             <img class="group-hover:scale-110 transition-all duration-700 w-full h-full object-cover object-center" src="{{$event->getFirstMediaUrl('event')}}" alt="">
                         </a>
                         </div>
