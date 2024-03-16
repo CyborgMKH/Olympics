@@ -28,7 +28,7 @@
                 <div class="py-10 px-5">
                     <h2 class="text-[40px] font-semibold">19 Jan - 01 Feb</h2>
                     <a href="" class="text-[25px] font-semibold">
-                    Gangawon 2024 | Winter Youth Olympic Games
+                    Gangawon 2024 | Fun Olympic Payris 2024
                     </a>
                 </div>
                 <div class="overflow-hidden">
