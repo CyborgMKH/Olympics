@@ -11,6 +11,9 @@
                         <a class="text-[25px] font-semibold">
                             {{$event->schedule}} | Fun Olympic Payris 2024
                         </a>
+                        <a class="text-[25px] italic">
+                            Location : {{$event->location}}
+                        </a>
                         </div>
                         <div class="overflow-hidden">
                         <a>
