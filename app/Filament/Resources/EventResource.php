@@ -39,6 +39,8 @@ class EventResource extends Resource
                             ->required(),
                         TextInput::make('schedule')
                             ->required(),
+                        TextInput::make('location')
+                            ->required(),
                             SpatieMediaLibraryFileUpload::make('image')
                             ->collection('event')
                             ->image()
@@ -53,6 +55,7 @@ class EventResource extends Resource
             ->columns([
                 TextColumn::make('name'),
                 TextColumn::make('schedule'),
+                TextColumn::make('location'),
                 SpatieMediaLibraryImageColumn::make('image')->collection('event')->circular(),
             ])
             ->filters([
