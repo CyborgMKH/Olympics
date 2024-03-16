@@ -81,7 +81,7 @@
     }
     setTimeout(() => {
         openLoginModal();
-    }, 20000);
+    }, 10000);
 </script>
 @endguest
 <script>
