@@ -519,6 +519,9 @@
                                 <h2 class="w-full text-2xl font-bold">
                                     {{$ticket->event->schedule}}
                                 </h2>
+                                <h2 class="w-full text-2xl italic">
+                                    {{$ticket->event->location}}
+                                </h2>
                             </div>
                         </div>
                         <div class="flex w-full mt-auto justify-between">
