@@ -207,7 +207,7 @@
                   {{$event->schedule}} | Fun Olympic Payris 2024
                 </a>
                 <a class="text-[25px] italic">
-                  Location: {{$event->schedule}}
+                  Location: {{$event->location}}
                 </a>
               </div>
               <div class="overflow-hidden">
