@@ -11,6 +11,7 @@ use App\Http\Controllers\SportController;
 use App\Http\Controllers\TicketController;
 use App\Http\Controllers\PayPalController;
 use App\Http\Controllers\SearchController;
+use Livewire\Livewire;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,5 +61,11 @@ Route::middleware('auth')->group(function () {
     Route::get('success-transaction', [PayPalController::class, 'successTransaction'])->name('successTransaction');
     Route::get('cancel-transaction', [PayPalController::class, 'cancelTransaction'])->name('cancelTransaction');
 });
+Livewire::setScriptRoute(function ($handle) {
+    return Route::get('/olympics/livewire/livewire.js', $handle);
+});
 
+Livewire::setUpdateRoute(function ($handle) {
+    return Route::post('/olympics/livewire/update', $handle);
+});
 require __DIR__ . '/auth.php';

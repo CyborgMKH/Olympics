@@ -18,7 +18,7 @@
                     </div>
                     @if (count($news)>1)
                         <div class="col-span-2">
-                            <a href="" class="group">
+                            <a href="{{route('news.single',$news[1]->slug)}}" class="group">
                                 <div class="overflow-hidden">
                                 <img class="w-full group-hover:scale-110 transition-all duration-500" src="{{$news[1]->getFirstMediaUrl('news')}}" alt="">
                                 </div>
@@ -34,7 +34,7 @@
                         @foreach ($news as $key=>$value)
                             @if ($key>1)
                                 <div>
-                                    <a href="" class="group">
+                                    <a href="{{route('news.single',$value->slug)}}" class="group">
                                         <div class="overflow-hidden">
                                         <img class="group-hover:scale-110 transition-all duration-700 w-full" src="{{$value->getFirstMediaUrl('news')}}" alt="">
                                         </div>
