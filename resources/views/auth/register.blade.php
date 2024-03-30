@@ -301,7 +301,7 @@
         
         {{--  game --}}
         <div class="mt-4">
-            <x-input-label for="game" :value="__('Game')" />
+            <x-input-label for="game" :value="__('Game (That your are intrested in...)')" />
             <input type="text" id="game" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm block mt-1 w-full" name="game" list="gameSuggestions">
             <datalist id="gameSuggestions">
                 @foreach($gameArray as $game)
